@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import sys
-type = sys.getdefaultencoding()
-print 'sysdefaultencoding is %s' % type
-a = '哈哈'.decode('utf-8').encode('gb2312')
+reload(sys)
+sys.setdefaultencoding('utf-8')
+a = u'哈哈'
 b = a
 a = '2014-03-05'
 print 'Hi, your word is %s , and today is %s' % (b, a)
+
+print u'中文'
