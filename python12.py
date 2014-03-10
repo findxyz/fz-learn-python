@@ -20,3 +20,5 @@ def my_map(f, *argsIt):
     return result
 
 print my_map(lambda x,y: x * y, (1, 2, "a", 4), [1, 4, 3, 8])
+
+print reduce(lambda x, y: x * y, [x if x < 0 else 6 for x in range(13)])
