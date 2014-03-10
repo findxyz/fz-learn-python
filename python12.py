@@ -7,7 +7,7 @@ import collections
 def my_map(f, *argsIt):
     for x in argsIt:
         if not isinstance(x, collections.Iterable):
-            raise TypeError("argument must be a iterable")
+            raise TypeError("argument must be a iterable type")
 
     itCount = len(argsIt)
     itLen = len(argsIt[0])
