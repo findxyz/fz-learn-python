@@ -1,3 +1,7 @@
+try:
+    import json # python >= 2.6 except ImportError: import simplejson as json # python <= 2.5
+except ImportError:
+    import simplejson as json # python <= 2.5
 import functools
 def f(a, b, c):
     print a
