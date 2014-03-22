@@ -24,7 +24,9 @@ def log(func_txt):
     else:
         return decorator
 
-@log('execute')
+str = 'gogogo'
+
+@log(str)
 def now():
     print '2014-03-09'
 

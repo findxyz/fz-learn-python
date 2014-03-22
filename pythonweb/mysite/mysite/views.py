@@ -1,19 +1,4 @@
-from django.http import Http404, HttpResponse
-import datetime
-
-def hello(request):
-    return HttpResponse('Hello World')
-
+from django.http import HttpResponse
 def home(request):
-    now = datetime.datetime.now()
-    html = '<html><body>Welcome! Now time is %s.</body></html>' % now
-    return HttpResponse(html)
-
-def hours_ahead(request, offset):
-    try:
-        offset = int(offset)
-    except ValueError:
-        raise Http404()
-    dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-    html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (offset, dt)
+    html = '<html><body>Welcome to django!</body></html>'
     return HttpResponse(html)

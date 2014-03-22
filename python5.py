@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-dict = {"fz": 26, "xx": 27}
+dict = {
+    "fz": 26,
+    "xx": 27
+}
 dict["cc"] = 28
 print dict["fz"]
 print dict.get("aa")
@@ -27,7 +30,11 @@ print "s3=s & s2:", s3
 s4 = s | s2
 print "s4=s | s2:", s4
 
-tuple = (1, 2, 3)
+tuple = (
+    1,
+    2,
+    3,
+)
 tuple2 = (1, [2, 3])
 
 s.add(tuple)

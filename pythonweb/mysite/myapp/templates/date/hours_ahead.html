@@ -1,0 +1,12 @@
+{% extends parent %}
+
+{% block title %}{{ offset }} hours later{% endblock %}
+
+{% block content %}
+In {{ offset }} hour(s), it will be {{ dt|date:'Y-m-d H:i:s' }}.
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+<p>Only test the magic var block.super</p>
+{% endblock %}
