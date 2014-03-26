@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'books',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,7 +67,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'zh-cn'
+LANGUAGE_CODE = 'zh-CN'
 
 TIME_ZONE = 'UTC-8'
 
@@ -85,3 +86,17 @@ STATIC_URL = '/static/'
 # TEMPLATE_DIRS = (
 #     (BASE_DIR+'/templates').replace('\\','/'),
 # )
+
+DATE_FORMAT = 'Y-m-d'
+DATETIME_FORMAT = 'Y-m-d H:i:s'
+
+SHORT_DATE_FORMAT = 'Y.m.d'
+SHORT_DATETIME_FORMAT = 'Y.m.d H:i'
+
+TIME_FORMAT = 'H:i'
+
+YEAR_MONTH_FORMAT = 'Y.m'
+
+MONTH_DAY_FORMAT = 'm.d'
+
+FIRST_DAY_OF_WEEK = 1

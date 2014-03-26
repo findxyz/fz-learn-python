@@ -30,3 +30,17 @@ def current_time(request):
         "title": "current_time"
     }
     return render_to_response("date/current_time.html", dic)
+
+def request_meta(request):
+    values = request.META.items()
+    values.sort()
+    html = []
+    html.append("<tr><td>%s</td><td>%s</td></tr>" % ("request.path", request.path))
+    html.append("<tr><td>%s</td><td>%s</td></tr>" % ("request.get_host()", request.get_host()))
+    html.append("<tr><td>%s</td><td>%s</td></tr>" % ("request.get_full_path()", request.get_full_path()))
+    for k, v in values:
+        html.append("<tr><td>%s</td><td>%s</td></tr>" % (k, v))
+    dic = {
+        "request_meta": "\n".join(html)
+    }
+    return render_to_response("request_meta.html", dic)

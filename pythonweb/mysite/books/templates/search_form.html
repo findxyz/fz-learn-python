@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block header %}<h2>Books Search</h2>{% endblock %}
+
+{% block content %}
+<form action="/books/search/" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+</form>
+{% endblock %}
+
+{% block footer %}
+<p>Below is block.super ^_^....Practice it again..</p>
+{{ block.super }}
+{% endblock %}

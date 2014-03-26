@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}The request meta{% endblock %}
+
+{% block header %}<h2>Request Meta Info</h2>{% endblock %}
+
+{% block content %}
+<table>{{ request_meta|safe }}</table>
+{% endblock %}
