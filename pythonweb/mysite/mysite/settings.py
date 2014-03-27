@@ -100,3 +100,9 @@ YEAR_MONTH_FORMAT = 'Y.m'
 MONTH_DAY_FORMAT = 'm.d'
 
 FIRST_DAY_OF_WEEK = 1
+
+EMAIL_HOST= 'smtp.126.com'
+EMAIL_PORT= 25
+EMAIL_HOST_USER = 'djangomail@126.com'
+EMAIL_HOST_PASSWORD = 'djangomail~!@'
+EMAIL_USE_TLS = True
