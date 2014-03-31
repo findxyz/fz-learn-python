@@ -17,9 +17,9 @@ Contact Us
 
 {% block content %}
 <form action="/books/contact/" method="post">{% csrf_token %}
-<p>subject: <input type="text" name="subject"/></p>
-<p>&nbsp;&nbsp;&nbsp;mail: <input type="text" name="email"/></p>
-<p>message: <textarea name="message" rows="10" cols="50"></textarea></p>
+<p>subject: <input type="text" name="subject" value="{{ subject }}"/></p>
+<p>&nbsp;&nbsp;&nbsp;mail: <input type="text" name="email" value="{{ email }}"/></p>
+<p>message: <textarea name="message" rows="10" cols="50">{{ message }}</textarea></p>
 <input type="submit" value="submit"/>
 </form>
 {% endblock %}

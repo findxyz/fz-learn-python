@@ -45,6 +45,10 @@ def contact(request):
             )
             return HttpResponseRedirect('/books/contact/thanks/')
     dic["errors"] = errors
+    print request.POST.get("subject", "")
+    dic["subject"] = request.POST.get("subject", "")
+    dic["message"] = request.POST.get("message", "")
+    dic["email"] = request.POST.get("email", "")
     return render_to_response('contact.html', dic)
 
 def contact_thanks(request):
