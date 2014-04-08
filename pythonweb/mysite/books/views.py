@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from books.models import Book
+from books.forms import ContactForm
 # Create your views here.
 
 # def search_form(request):
@@ -28,27 +29,15 @@ def search(request):
 def contact(request):
     dic = {}
     dic.update(csrf(request))
-    errors = []
     if request.method == 'POST':
-        if not request.POST.get('subject', ''):
-            errors.append('Enter a subject.')
-        if not request.POST.get('message', ''):
-            errors.append('Enter a message.')
-        if request.POST.get('email') and '@' not in request.POST.get('email'):
-            errors.append('Enter a valid e-mail address.')
-        if not errors and request.POST.get('email'):
-            send_mail(
-                request.POST['subject'],
-                request.POST['message'],
-                'djangomail@126.com',
-                [request.POST.get('email')]
-            )
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            print cd
             return HttpResponseRedirect('/books/contact/thanks/')
-    dic["errors"] = errors
-    print request.POST.get("subject", "")
-    dic["subject"] = request.POST.get("subject", "")
-    dic["message"] = request.POST.get("message", "")
-    dic["email"] = request.POST.get("email", "")
+    else:
+        form = ContactForm()
+    dic['form'] = form
     return render_to_response('contact.html', dic)
 
 def contact_thanks(request):
